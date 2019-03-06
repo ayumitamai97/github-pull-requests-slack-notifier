@@ -1,0 +1,26 @@
+# Welcome to Serverless!
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: pull-requests-slack-notifier
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: prod
+  region: ap-northeast-1
+
+functions:
+  notify_slack:
+    handler: handler.notify_slack
+
+    events:
+      - schedule: cron(* * */3 * ? *)
+
+    environment:
+      GITHUB_TOKEN: ${file(./variables.yml):GITHUB_TOKEN}
+      SLACK_TOKEN: ${file(./variables.yml):SLACK_TOKEN}
+      SLACK_CHANNEL: ${file(./variables.yml):SLACK_CHANNEL}
+      REPO_URL: ${file(./variables.yml):REPO_URL}
