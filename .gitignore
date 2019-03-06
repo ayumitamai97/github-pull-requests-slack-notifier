@@ -1,3 +1,5 @@
+bin/
+
 # Distribution / packaging
 .Python
 *.pyc
@@ -34,3 +36,5 @@ idna
 idna*/
 requests
 requests*/
+urllib3
+urllib3*/
