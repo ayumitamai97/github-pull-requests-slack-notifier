@@ -24,3 +24,13 @@ variables.yml
 
 # Editor configuratinos
 .idea/
+
+# libraries
+certifi
+certifi*/
+chardet
+chardet*/
+idna
+idna*/
+requests
+requests*/
