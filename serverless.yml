@@ -17,7 +17,7 @@ functions:
     handler: handler.notify_slack
 
     events:
-      - schedule: cron(* * */3 * ? *)
+      - schedule: cron(* 1 ? * MON,THU,SAT *) # UTC
 
     environment:
       GITHUB_TOKEN: ${file(./variables.yml):GITHUB_TOKEN}
